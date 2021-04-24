@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="./img/Logo V1_FaceOnly.png" type="image/png">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700&family=Teko&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" />
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bad+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;600&display=swap" rel="stylesheet">
+
+    <title>STROKES-Hue</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        .header {
+            position: relative;
+            background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 100%), url(./img/hue-bg.jpg);
+            z-index: 1;
+            min-height: 40vh;
+            background-size: cover;
+            background-position: center;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+
+        @media(min-width:1000px) {
+            .header {
+                height: 65vh;
+            }
+        }
+
+        @media(max-width:400px) {
+            #footer a {
+                font-size: 17px;
+            }
+        }
+
+        .row {
+            margin: 0;
+        }
+
+        .title {
+            padding: 4vw;
+            font-family: 'Teko', sans-serif;
+            font-size: 50px;
+            line-height: 0;
+            letter-spacing: -20px;
+            color: whitesmoke;
+            text-transform: uppercase;
+            font-weight: bold;
+            text-align: center;
+            writing-mode: vertical-rl;
+            text-orientation: upright;
+        }
+
+        .parallax {
+            /* The image used */
+            background: -webkit-linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%), url("./img/photo1.jpg");
+
+            /* Set a specific height */
+            min-height: 500px;
+
+            /* Create the parallax scrolling effect */
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .preview {
+            width: 100%;
+        }
+
+        .art.row {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .art.row>.col {
+            padding: 0 8px;
+        }
+
+        .art.col {
+            float: left;
+            width: 25%;
+        }
+
+
+
+        /* lightbox */
+
+
+        .portfolio-menu {
+            text-align: center;
+        }
+
+        .portfolio-menu ul li {
+            border-color: chartreuse;
+            color: beige;
+            display: inline-block;
+            margin: 0;
+            list-style: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            -webkit-transition: all 05s ease;
+            -moz-transition: all 05s ease;
+            -ms-transition: all 05s ease;
+            -o-transition: all 05s ease;
+            transition: all .5s ease;
+        }
+
+
+        .portfolio-item .item {
+            /*width:303px;*/
+            float: left;
+            margin-bottom: 10px;
+            margin-top: 10px;
+        }
+
+        .art-h1 {
+            font-size: 5vw;
+            font-weight: 500;
+            color: beige;
+
+        }
+
+        .art-hr {
+            height: 4px;
+            width: 70px;
+            position: relative;
+            background: #c0f558;
+            margin-left: 0;
+            align-self: center;
+            margin-bottom: 40px;
+            margin-left: auto;
+            margin-right: auto;
+            border: 0;
+            opacity: 1;
+        }
+
+        .art-hr.hr {
+            margin-bottom: 10px;
+        }
+
+        .logo {
+            position: fixed;
+            right: 3px;
+            top: 0;
+            z-index: 2;
+        }
+
+        /* footer */
+
+        #footer {
+            background: #262626;
+            padding: 0;
+        }
+
+        #footer h3 {
+            color: #8eb640;
+            font-weight: 400;
+            font-size: 18px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        #footer .copyrights {
+            padding: 20px 0;
+            /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#779936+0,8eb640+50 */
+            background: rgb(119, 153, 54);
+            /* Old browsers */
+            background: -moz-linear-gradient(top, rgba(119, 153, 54, 1) 0%, rgba(142, 182, 64, 1) 50%);
+            /* FF3.6-15 */
+            background: -webkit-linear-gradient(top, rgba(119, 153, 54, 1) 0%, rgba(142, 182, 64, 1) 50%);
+            /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(to bottom, rgba(119, 153, 54, 1) 0%, rgba(142, 182, 64, 1) 50%);
+            /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#779936', endColorstr='#8eb640', GradientType=0);
+            /* IE6-9 */
+        }
+
+        #footer .social {
+            margin: 20px 0 30px 0;
+        }
+
+        #footer .social ul li {
+            display: inline-block;
+            margin: 0 20px;
+        }
+
+        #footer .social i.fab {
+            font-size: 26px;
+            padding: 4px;
+            color: #fff;
+            transition: all 0.3s;
+        }
+
+        #footer .social i.fab:hover {
+            color: #eee;
+        }
+
+        #footer p {
+            font-size: 1.5vw;
+            text-align: center;
+            align-items: center;
+            color: rgba(255, 255, 255, 0.8)
+        }
+
+        #footer h3 {
+            font-size: 2vw;
+        }
+
+        #footer a {
+            color: #f6f6f6;
+
+        }
+
+        #footer a:hover {
+            color: #333;
+            text-decoration: none;
+        }
+
+        .loader {
+            background: rgb(76, 173, 60);
+            background: linear-gradient(180deg, rgba(76, 173, 60, 1) 0%, rgba(253, 253, 253, 1) 100%);
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            margin: auto;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            z-index: 1000;
+            overflow: hidden;
+
+        }
+
+        .loadlogo {
+            padding-top: 10%;
+            position: relative;
+            margin: auto;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            text-align: center;
+            align-items: center;
+            margin-bottom: 0.5vw;
+        }
+
+        .loadh1 {
+            padding-top: 10vw;
+            position: relative;
+            font-size: 3vw;
+            color: darkslategrey;
+            font-family: 'Bad Script', cursive;
+            text-align: center;
+            display: block;
+
+        }
+
+        .hide {
+            opacity: 0;
+            transition: opacity ease;
+        }
+
+        .disp {
+            display: none;
+        }
+        @media(max-width:500px){
+    .loadlogo{
+        padding-top: 50%;
+    }
+}
+    </style>
+
+
+
+</head>
+
+<body>
+    <div class="loader">
+        <div class="loadlogo">
+            <img src="./img/logo.png" alt="" width="180" height="200">
+        </div>
+        <h1 class="loadh1 animate__animated animate__fadeInLeft">Unleashing Creativity..</h1>
+
+    </div>
+
+
+    <section class="header">
+        <h1 class="title"><span style="color:palegreen;">S</span><span style="color: yellow;">t</span><span
+                style="color: yellowgreen;">r</span><span style="color:palevioletred;">o</span><span
+                style="color:royalblue;">k</span><span style="color:tomato;">e</span><span
+                style="color:palegreen ;">s</span>
+        </h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center my-2">
+                    <hr class="art-hr hr">
+                    <h1 class="art-h1">HUE<span style="font-family: 'Bad Script', cursive;">tify</span></h1>
+                    <hr class="art-hr">
+                </div>
+            </div>
+            <div class="portfolio-menu mt-2 mb-4">
+                <ul>
+                    <!-- <li class="btn btn-outline-dark active" id="cl"  data-filter="*">All</li> -->
+                    <li class="btn btn-outline-dark active" id="cl1" data-filter=".tr">TRAVEL</li>
+                    <li class="btn btn-outline-dark" data-filter=".po">PORTRAIT</li>
+                    <li class="btn btn-outline-dark" data-filter=".le">LONG EXPOSURE</li>
+                    <li class="btn btn-outline-dark" data-filter=".st">STREET</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="art parallax">
+        <div class="container">
+            <div class="portfolio-item row">
+                <div class="item tr col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/hue/travel/1.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/hue/travel/1.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item po col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/hue/portrait/1.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/hue/portrait/1.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item le col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/hue/long expo/1.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/hue/long expo/1.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item st col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/hue/street/1.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/hue/street/1.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item tr col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/hue/travel/2.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/hue/travel/2.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item po col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/hue/portrait/2.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/hue/portrait/2.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item le col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/hue/long expo/2.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/hue/long expo/2.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item st col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/hue/street/2.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/hue/street/2.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item tr col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/hue/travel/3.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/hue/travel/3.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item po col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/hue/portrait/3.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/hue/portrait/3.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item le col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/hue/long expo/3.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/hue/long expo/3.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item st col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/hue/street/3.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/hue/street/3.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item tr col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/hue/travel/4.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/hue/travel/4.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item po col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/hue/portrait/4.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/hue/portrait/4.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item le col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/hue/long expo/4.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/hue/long expo/4.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item st col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/hue/street/4.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/hue/street/4.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item tr col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/hue/travel/5.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/hue/travel/5.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item po col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/hue/portrait/5.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/hue/portrait/5.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item le col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/hue/long expo/5.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/hue/long expo/5.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item st col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/hue/street/5.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/hue/street/5.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item tr col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/hue/travel/6.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/hue/travel/6.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item po col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/hue/portrait/6.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/hue/portrait/6.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item le col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/hue/long expo/6.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/hue/long expo/6.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item st col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/hue/street/6.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/hue/street/6.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item tr col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/hue/travel/7.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/hue/travel/7.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item po col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/hue/portrait/7.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/hue/portrait/7.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item le col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/hue/long expo/7.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/hue/long expo/7.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item st col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/hue/street/7.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/hue/street/7.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item tr col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/hue/travel/8.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/hue/travel/8.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item po col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/hue/portrait/8.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/hue/portrait/8.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item le col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/hue/long expo/8.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/hue/long expo/8.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item st col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/hue/street/8.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/hue/street/8.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item tr col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/hue/travel/9.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/hue/travel/9.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item po col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/hue/portrait/9.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/hue/portrait/9.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item le col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/hue/long expo/9.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/hue/long expo/9.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item st col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/hue/street/9.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/hue/street/9.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item tr col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/hue/travel/10.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/hue/travel/10.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item po col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/hue/portrait/10.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/hue/portrait/10.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item le col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/hue/long expo/10.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/hue/long expo/10.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item st col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/hue/street/10.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/hue/street/10.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item tr col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/hue/travel/11.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/hue/travel/11.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item le col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/hue/long expo/11.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/hue/long expo/11.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item st col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/hue/street/11.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/hue/street/11.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item tr col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/hue/travel/12.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/hue/travel/12.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item le col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/hue/long expo/12.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/hue/long expo/12.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item st col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/hue/street/12.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/hue/street/12.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item tr col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/hue/travel/13.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/hue/travel/13.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item le col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/hue/long expo/13.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/hue/long expo/13.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item st col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/hue/street/13.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/hue/street/13.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item tr col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/hue/travel/14.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/hue/travel/14.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item le col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/hue/long expo/14.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/hue/long expo/14.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item st col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/hue/street/14.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/hue/street/14.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item tr col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/hue/travel/15.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/hue/travel/15.jpg" alt="">
+                    </a>
+                </div>
+
+                <div class="item st col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/hue/street/15.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/hue/street/15.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item tr col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/hue/travel/16.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/hue/travel/16.jpg" alt="">
+                    </a>
+                </div>
+
+                <div class="item st col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/hue/street/16.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/hue/street/16.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item tr col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/hue/travel/17.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/hue/travel/17.jpg" alt="">
+                    </a>
+                </div>
+
+                <div class="item st col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/hue/street/17.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/hue/street/17.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item tr col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/hue/travel/18.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/hue/travel/18.jpg" alt="">
+                    </a>
+                </div>
+
+                <div class="item st col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/hue/street/18.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/hue/street/18.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item tr col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/hue/travel/19.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/hue/travel/19.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item tr col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/hue/travel/20.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/hue/travel/20.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item tr col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/hue/travel/21.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/hue/travel/21.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item tr col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/hue/travel/22.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/hue/travel/22.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item tr col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/hue/travel/23.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/hue/travel/23.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item tr col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/hue/travel/24.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/hue/travel/24.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item tr col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/hue/travel/25.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/hue/travel/25.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item tr col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/hue/travel/26.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/hue/travel/26.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item tr col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/hue/travel/27.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/hue/travel/27.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item tr col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/hue/travel/28.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/hue/travel/28.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item tr col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/hue/travel/29.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/hue/travel/29.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item tr col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/hue/travel/30.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/hue/travel/30.jpg" alt="">
+                    </a>
+                </div>
+
+
+
+            </div>
+
+        </div>
+    </section>
+    <div class="logo">
+        <img src="./img/logo1.png" alt="" width="70" height="18">
+    </div>
+    <section id="footer">
+        <div class="row text-center copyrights">
+            <div class="col-lg-12" style="padding: 0;">
+                <div class="social">
+                    <ul>
+                        <li><a href="https://www.facebook.com/Strokes.NITD/"><i
+                                    class="fab fa-facebook-square"></i></i></a>
+                        </li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="https://www.instagram.com/wearestrokes/"><i class="fab fa-instagram"></i></a>
+                        </li>
+                        <li><a href="https://www.youtube.com/channel/UC43_ERuEtBeaZoCCAWiBdaw/featured"><i
+                                    class="fab fa-youtube"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <p style="align-items: center; margin-left:auto;">&copy; 2021 STROKES. All rights reserved.<br>
+                    <a href="index.html" rel="nofollow"><strong>BACK TO HOME</strong></a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css" />
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js"></script>
+
+    <script src="js/app.js"></script>
+    <script src="js/isotope.js"></script>
+    <script>
+        if($(window).width>400){
+        $(window).resize(function () { location.reload(); });}
+        window.onload = function () {
+            document.getElementById('cl1').click();
+        }
+        function run() {
+            $('.portfolio-item').isotope({
+                itemSelector: '.item',
+                percentPosition: true,
+                layoutMode: "masonry",
+                filter: '.tr',
+                percentPosition: true,
+                masonry: {
+                    // columnWidth: '.grid-sizer',
+                    fitWidth: true,
+                }
+            });
+        }
+
+        $('.portfolio-menu ul li').click(function () {
+            $('.portfolio-menu ul li').removeClass('active');
+            $(this).addClass('active');
+
+            var selector = $(this).attr('data-filter');
+            $('.portfolio-item').isotope({
+                filter: selector
+            });
+            return false;
+        });
+
+
+
+        $(document).ready(function () {
+            var popup_btn = $('.popup-btn');
+            popup_btn.magnificPopup({
+                type: 'image',
+                gallery: {
+                    enabled: true
+                }
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>

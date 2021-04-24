@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./img/Logo V1_FaceOnly.png" type="image/png">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700&family=Teko&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bad+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;600&display=swap" rel="stylesheet">
+
+    <title>STROKES-Team</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            padding-top: 20px;
+            /* The image used */
+            background: -webkit-linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%), url("./img/team-bg.JPG");
+            /* Set a specific height */
+            min-height: 500px;
+            /* Create the parallax scrolling effect */
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            overflow-x: hidden;
+        }
+
+
+        .title,
+        h1 {
+            padding: 4vw;
+            font-family: 'Teko', sans-serif;
+            font-size: 6vw;
+            line-height: 0;
+            color: lightgoldenrodyellow;
+            text-transform: uppercase;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .title-p {
+            padding: 4vw;
+            font-family: 'Raleway', sans-serif;
+            font-size: 3vw;
+            line-height: 0;
+            padding-bottom: 8vw;
+            color: black;
+            text-transform: uppercase;
+            font-weight: bold;
+            text-align: center;
+            word-spacing: 1vw;
+        }
+
+        .art-hr {
+            height: 4px;
+            width: 70px;
+            position: relative;
+            background: #c0f558;
+            margin-left: 0;
+            align-self: center;
+            margin-bottom: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            border: 0;
+            opacity: 1;
+        }
+
+        .art-hr.hr {
+            margin-bottom: 10px;
+        }
+
+        .card-deck {
+            margin: 0 -15px;
+            justify-content: space-between;
+        }
+
+        .card-deck .card {
+            margin: 0 0 1rem;
+            background: transparent;
+            border: none;
+            color: palegoldenrod;
+
+        }
+
+        .card>img {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+
+        }
+
+        @media(max-width:576px) {
+            .card-deck .card {
+                margin: 0 0 1rem;
+                background: transparent;
+                border: none;
+                color: palegoldenrod;
+                display: flex;
+                flex-direction: column;
+                -webkit-box-sizing: inherit;
+                width: 16rem;
+                height: 100%;
+                align-items: center !important;
+                border: none !important;
+                box-sizing: border-box;
+                margin-right: auto;
+                margin-left: auto;
+            }
+
+            .card>img {
+                width: 250px;
+                height: 250px;
+                object-fit: cover;
+            }
+
+            .card-title {
+                font-size: 1em;
+                text-align: center;
+            }
+
+            .card-text {
+                font-size: 0.7em;
+                text-align: center;
+
+            }
+
+            .card-deck .card {
+                -ms-flex: 0 0 48.7%;
+                flex: 0 0 48.7%;
+            }
+
+
+        }
+
+        @media (min-width: 576px) and (max-width: 767.98px) {
+            .card-deck .card {
+                -ms-flex: 0 0 48.7%;
+                flex: 0 0 48.7%;
+            }
+
+        }
+
+        @media (min-width: 768px) and (max-width: 991.98px) {
+            .card-deck .card {
+                -ms-flex: 0 0 32%;
+                flex: 0 0 32%;
+            }
+
+            .card-deck .card {
+                margin-right: 0.3rem;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .card-deck .card {
+                -ms-flex: 0 0 24%;
+                flex: 0 0 24%;
+            }
+
+            .card-deck .card {
+                margin-right: 0.7rem;
+            }
+        }
+
+        .logo {
+            position:fixed;
+            left: 3px;
+            top: 0;
+            z-index: 2;
+            
+        }
+        /* footer */
+
+        #footer {
+            background: #262626;
+            padding:0;
+        }
+
+        #footer h3 {
+            color: #8eb640;
+            font-weight: 400;
+            font-size: 18px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        #footer .copyrights {
+            padding: 20px 0;
+            /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#779936+0,8eb640+50 */
+            background: rgb(119, 153, 54);
+            /* Old browsers */
+            background: -moz-linear-gradient(top, rgba(119, 153, 54, 1) 0%, rgba(142, 182, 64, 1) 50%);
+            /* FF3.6-15 */
+            background: -webkit-linear-gradient(top, rgba(119, 153, 54, 1) 0%, rgba(142, 182, 64, 1) 50%);
+            /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(to bottom, rgba(119, 153, 54, 1) 0%, rgba(142, 182, 64, 1) 50%);
+            /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#779936', endColorstr='#8eb640', GradientType=0);
+            /* IE6-9 */
+        }
+
+        #footer .social {
+            margin: 20px 0 30px 0;
+        }
+
+        #footer .social ul li {
+            display: inline-block;
+            margin: 0 20px;
+        }
+
+        #footer .social i.fab {
+            font-size: 26px;
+            padding: 4px;
+            color: #fff;
+            transition: all 0.3s;
+        }
+
+        #footer .social i.fab:hover {
+            color: #eee;
+        }
+
+        #footer p {
+            font-size: 1.5vw;
+            text-align: center;
+            align-items: center;
+            color: rgba(255, 255, 255, 0.8)
+        }
+
+        #footer h3 {
+            font-size: 2vw;
+        }
+
+        #footer a {
+            color: #f6f6f6;
+            
+        }
+
+        #footer a:hover {
+            color: #333;
+            text-decoration: none;
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+    <div class="logo">
+        <img src="./img/logo1.png" alt="" width="70" height="18">
+    </div>
+    <section class="header">
+        <!-- <hr class="art-hr hr"> -->
+        
+        <h1 class="title">MEET OUR TEAM</h1>
+        <hr class="art-hr">
+        <p class="title-p">Too much <span style="color: #c0f558;">Creativity</span> in this section.</p>
+
+        
+
+    </section>
+    <section class="team">
+        <div class="container">
+            <h1>FOURTH YEAR</h1>
+
+            <hr class="art-hr">
+            <div class="card-deck">
+
+                <div class="card">
+                    <img class="card-img-top" src="./img/team/4th/Aneek Biswas.png" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Aneek Biswas</h5>
+                        <p class="card-text">President</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="./img/team/4th/rohan.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Rohan Chowdhary</h5>
+                        <p class="card-text">Vice Senior President</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="./img/team/4th/Mahima Kriti.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Mahima Kriti</h5>
+                        <p class="card-text">General Secretary</p>
+                    </div>
+                </div>
+
+
+                <div class="card">
+                    <img class="card-img-top" src="./img/team/4th/Anik Saha.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Anik Saha</h5>
+                        <p class="card-text">Head,Photography Cell</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="./img/team/4th/Aman Deep Sandhu.png" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Amandeep Sandhu</h5>
+                        <p class="card-text">Head,Art Cell</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="./img/team/4th/Aniruddha Das.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Aniruddha Das</h5>
+                        <p class="card-text">Senior Coordinator</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="./img/team/4th/Dayeeta Pal.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Dayeeta Pal</h5>
+                        <p class="card-text">Senior Coordinator</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="./img/team/4th/Purnima.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Purnima</h5>
+                        <p class="card-text">Senior Coordinator</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="./img/team/4th/Radhika.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Radhika Agarwal</h5>
+                        <p class="card-text">Senior Coordinator</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="./img/team/4th/Rishav Dutta.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Rishav Dutta</h5>
+                        <p class="card-text">Senior Coordinator</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="./img/team/4th/Sudeshna Gun.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Sudeshna Goon</h5>
+                        <p class="card-text">Senior Coordinator</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="./img/team/4th/MD Kavid Tassin.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">MD Kavid Tassin</h5>
+                        <p class="card-text">Senior Coordinator</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="./img/team/4th/Suchi Subhra Mahato.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Suchi Subhra Mahato</h5>
+                        <p class="card-text">Senior Coordinator</p>
+                    </div>
+                </div>
+            </div>
+            <h1>THIRD YEAR</h1>
+            <hr class="art-hr">
+            <div class="card-deck">
+
+                <div class="card">
+                    <img class="card-img-top" src="./img/team/3rd/Annasha Dey.png" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Annasha Dey</h5>
+                        <p class="card-text">Senior Coordinator</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="./img/team/3rd/Amit Bose.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Amit Bose</h5>
+                        <p class="card-text">Senior Coordinator</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="./img/team/3rd/Ambika Biswas Neela.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Ambika Neela Biswas</h5>
+                        <p class="card-text">Senior Coordinator</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="./img/team/3rd/Joyeeta Mandal.png" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Joyeeta Mandal</h5>
+                        <p class="card-text">Senior Coordinator</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="./img/team/3rd/Rangeet Hait.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Rangeet Hait</h5>
+                        <p class="card-text">Senior Coordinator</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="./img/team/3rd/Sankhomala Hansda.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Sankhomala Hansda</h5>
+                        <p class="card-text">Senior Coordinator</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="./img/team/3rd/Pratiksha Patel.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Pratiksha Patel</h5>
+                        <p class="card-text">Senior Coordinator</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="./img/team/3rd/Nikita Bhowmik.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Nikita Bhowmik</h5>
+                        <p class="card-text">Senior Coordinator</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="./img/team/3rd/Disha De.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Disha De</h5>
+                        <p class="card-text">Senior Coordinator</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="./img/team/3rd/Snigdha Behera.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Snigdha Behera</h5>
+                        <p class="card-text">Senior Coordinator</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <!-- <img class="card-img-top" style="border: none; outline: none;"> -->
+                    <div class="card-body">
+                        <!-- <h5 class="card-title">Snigdha Behera</h5>
+                        <p class="card-text">Senior Coordinator</p> -->
+                    </div>
+                </div>
+            </div>
+            <h1>SECOND YEAR</h1>
+            <hr class="art-hr">
+            <div class="card-deck">
+
+                <div class="card">
+                    <img class="card-img-top" src="./img/team/2nd/Vedang Pancholi.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Vedang Pancholi</h5>
+                        <p class="card-text">Senior Coordinator</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="./img/team/2nd/Yash Sinha.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Yash Sinha</h5>
+                        <p class="card-text">Senior Coordinator</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="./img/team/2nd/Sankhadeep Ghosh.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Sankhadeep Ghosh</h5>
+                        <p class="card-text">Senior Coordinator</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="./img/team/2nd/Sarthak Bhar.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Sarthak Bhar</h5>
+                        <p class="card-text">Senior Coordinator</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="./img/team/2nd/Supriyo Karmakar.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Supriyo Karmakar</h5>
+                        <p class="card-text">Senior Coordinator</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="./img/team/2nd/G. Sumedh Anil.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">G. Sumedh Anil</h5>
+                        <p class="card-text">Senior Coordinator</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="./img/team/2nd/Ramyanil Raha.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Ramyanil Raha</h5>
+                        <p class="card-text">Senior Coordinator</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="./img/team/2nd/Diksha Senapati.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Diksha Senapati</h5>
+                        <p class="card-text">Senior Coordinator</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="./img/team/2nd/Vipin Bohra.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Vipin Bohra</h5>
+                        <p class="card-text">Senior Coordinator</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="./img/team/2nd/Oliva Majumdar.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Oliva Majumdar</h5>
+                        <p class="card-text">Senior Coordinator</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="./img/team/2nd/Srijita Ghosh.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Srijita Ghosh</h5>
+                        <p class="card-text">Senior Coordinator</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="./img/team/2nd/Pranav Bajpai.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Pranav Bajpai</h5>
+                        <p class="card-text">Senior Coordinator</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="./img/team/2nd/Disha Sharma.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Disha Sharma</h5>
+                        <p class="card-text">Senior Coordinator</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="./img/team/2nd/ALLU SUBBU.jpeg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Allu Subbu</h5>
+                        <p class="card-text">Senior Coordinator</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="./img/team/2nd/Prabhat Rathod.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Prabhat Rathod</h5>
+                        <p class="card-text">Senior Coordinator</p>
+                    </div>
+                </div>
+            </div>
+            <h1>FIRST YEAR</h1>
+            <hr class="art-hr">
+            <div class="card-deck">
+
+                <div class="card">
+                    <img class="card-img-top" src="./img/team/1st/Sompranshu Karak.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Sompranshu Karak</h5>
+                        <p class="card-text">Junior Coordinator</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="./img/team/1st/Sourajit Pal_.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Sourajit Pal</h5>
+                        <p class="card-text">Junior Coordinator</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="./img/team/1st/Satyam Yogendra.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Satyam Yogendra</h5>
+                        <p class="card-text">Junior Coordinator</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="./img/team/1st/Neeladri Dhar.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Neeladri Dhar</h5>
+                        <p class="card-text">Junior Coordinator</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="./img/team/1st/Marshal Mardi.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Marshal Mardi</h5>
+                        <p class="card-text">Junior Coordinator</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="./img/team/1st/Arindam Mandal.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Arindam Mandal</h5>
+                        <p class="card-text">Junior Coordinator</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="./img/team/1st/Shubhronil Mondal_.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Shubhronil Mondal</h5>
+                        <p class="card-text">Junior Coordinator</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="./img/team/1st/Sandip Goldar.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Sandip Goldar</h5>
+                        <p class="card-text">Junior Coordinator</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="./img/team/1st/Sushmita Nandi.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Sushmita Nandi</h5>
+                        <p class="card-text">Junior Coordinator</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="./img/team/1st/Udayan Mukherjee.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Udayan Mukherjee</h5>
+                        <p class="card-text">Junior Coordinator</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="./img/team/1st/Nikita Roy_.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Nikita Roy</h5>
+                        <p class="card-text">Junior Coordinator</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="./img/team/1st/KUSHAGRA PRATAP SINGH.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Kushagra Pratap</h5>
+                        <p class="card-text">Junior Coordinator</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="./img/team/1st/Debasmita Das.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Debasmita Das</h5>
+                        <p class="card-text">Junior Coordinator</p>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </div>
+    </section>
+    <section id="footer">
+        <div class="row text-center copyrights">
+            <div class="col-lg-12" style="padding: 0;">
+                <div class="social">
+                    <ul>
+                        <li><a href="https://www.facebook.com/Strokes.NITD/"><i
+                                    class="fab fa-facebook-square"></i></i></a>
+                        </li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="https://www.instagram.com/wearestrokes/"><i class="fab fa-instagram"></i></a>
+                        </li>
+                        <li><a href="https://www.youtube.com/channel/UC43_ERuEtBeaZoCCAWiBdaw/featured"><i
+                            class="fab fa-youtube"></i></a>
+                </li>
+                    </ul>
+                </div>
+                <p style="align-items: center; margin-left:auto;">&copy; 2021 STROKES. All rights reserved.<br>
+                    <a href="index.html" rel="nofollow"><strong>BACK TO HOME</strong></a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+</body>
+
+</html>
