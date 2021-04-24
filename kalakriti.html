@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="./img/Logo V1_FaceOnly.png" type="image/png">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700&family=Teko&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Eczar:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bad+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;600&display=swap" rel="stylesheet">
+
+    <title>Kalakriti</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            overflow-x: hidden;
+            scroll-behavior: smooth !important;
+        }
+
+        .row {
+            margin-right: 0;
+        }
+
+
+        .header {
+            background: antiquewhite;
+            overflow-x: hidden;
+            position: relative;
+            background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 100%), url(./img/2.jpg);
+            /* z-index: 1; */
+            min-height: 70vh;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        .container {
+            align-items: center;
+            text-align: center;
+            width: 100%;
+            color: antiquewhite;
+        }
+
+
+        .title {
+            padding-top: 30px;
+            font-family: 'Eczar', serif;
+            font-size: 6vw;
+            font-weight: 500;
+            margin: 0 auto;
+            text-align: center;
+            color: bisque;
+        }
+
+        .row {
+            margin: 0;
+        }
+
+        .kala-p {
+            font-family: 'Raleway', sans-serif;
+            font-size: 10px;
+            font-weight: 100;
+            text-align: center;
+            padding-top: 30px;
+            color: antiquewhite;
+        }
+
+        .title.kalak {
+            padding-top: 20px;
+        }
+
+        .row p {
+            text-align: left;
+            padding-left: 8px;
+            padding-right: 8px;
+        }
+
+        .para1 {
+            padding-top: 50px;
+        }
+
+        .para {
+            padding-top: 7vw;
+            background-color: rgb(58, 39, 21)
+        }
+
+        .container>p {
+            text-align: center;
+            font-size: 2vw;
+        }
+
+        .pattern {
+            background-color: #e5e5f7;
+            opacity: 0.5;
+            background-image: linear-gradient(135deg, #913d00 25%, transparent 25%), linear-gradient(225deg, #913d00 25%, transparent 25%), linear-gradient(45deg, #913d00 25%, transparent 25%), linear-gradient(315deg, #913d00 25%, #e5e5f7 25%);
+            background-position: 20px 0, 20px 0, 0 0, 0 0;
+            background-size: 40px 40px;
+            background-repeat: repeat;
+            height: 7vw;
+        }
+
+        .preview {
+            width: 100%;
+        }
+
+        .art.row {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .art.row>.col {
+            padding: 0 8px;
+        }
+
+        .art.col {
+            float: left;
+            width: 25%;
+        }
+
+        /* lightbox */
+
+        .portfolio-menu {
+            text-align: center;
+        }
+
+        .portfolio-menu ul li {
+            border-color: chartreuse;
+            color: beige;
+            display: inline-block;
+            margin: 0;
+            list-style: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            -webkit-transition: all 05s ease;
+            -moz-transition: all 05s ease;
+            -ms-transition: all 05s ease;
+            -o-transition: all 05s ease;
+            transition: all .5s ease;
+        }
+
+        /* .portfolio-item{
+	width:100%;
+} */
+        .portfolio-item .item {
+            /*width:303px;*/
+            float: left;
+            margin-bottom: 10px;
+        }
+
+        .art-h1 {
+            font-size: 5vw;
+            font-weight: 500;
+            color: beige;
+
+        }
+
+        .art-hr {
+            height: 4px;
+            width: 70px;
+            position: relative;
+            background: #c0f558;
+            margin-left: 0;
+            align-self: center;
+            margin-bottom: 40px;
+            margin-left: auto;
+            margin-right: auto;
+            border: 0;
+            opacity: 1;
+        }
+
+        .art-hr.hr {
+            margin-bottom: 10px;
+        }
+
+        @media(max-width:400px) {
+            .kala-p {
+                font-size: 10px !important;
+            }
+
+            #footer a {
+                font-size: 15px;
+            }
+        }
+
+        .logo {
+            position: fixed;
+            right: 3px;
+            top: 0;
+            z-index: 2;
+        }
+
+        /* footer */
+
+        #footer {
+            background: #262626;
+            padding: 0;
+        }
+
+        #footer h3 {
+            color: #8eb640;
+            font-weight: 400;
+            font-size: 18px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        #footer .copyrights {
+            padding: 20px 0;
+            /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#779936+0,8eb640+50 */
+            background: rgb(119, 153, 54);
+            /* Old browsers */
+            background: -moz-linear-gradient(top, rgba(119, 153, 54, 1) 0%, rgba(142, 182, 64, 1) 50%);
+            /* FF3.6-15 */
+            background: -webkit-linear-gradient(top, rgba(119, 153, 54, 1) 0%, rgba(142, 182, 64, 1) 50%);
+            /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(to bottom, rgba(119, 153, 54, 1) 0%, rgba(142, 182, 64, 1) 50%);
+            /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#779936', endColorstr='#8eb640', GradientType=0);
+            /* IE6-9 */
+        }
+
+        #footer .social {
+            margin: 20px 0 30px 0;
+        }
+
+        #footer .social ul li {
+            display: inline-block;
+            margin: 0 20px;
+        }
+
+        #footer .social i.fab {
+            font-size: 26px;
+            padding: 4px;
+            color: #fff;
+            transition: all 0.3s;
+        }
+
+        #footer .social i.fab:hover {
+            color: #eee;
+        }
+
+        #footer p {
+            font-size: 1.5vw;
+            text-align: center;
+            align-items: center;
+            color: rgba(255, 255, 255, 0.8)
+        }
+
+        #footer h3 {
+            font-size: 2vw;
+        }
+
+        #footer a {
+            color: #f6f6f6;
+
+        }
+
+        a {
+            text-decoration: none;
+            color: antiquewhite;
+        }
+
+        #footer a:hover {
+            color: #333;
+            text-decoration: none;
+        }
+
+        .kalap:hover {
+            text-shadow: 0 0 10px #25ff1e !important;
+            color: antiquewhite;
+            transition: 300ms ease;
+            transform: scale(1.1);
+            -webkit-transform: scale(1.1);
+
+        }
+
+
+        .glow {
+            /* font-size: 80px; */
+            color: #fff;
+            text-align: center;
+            animation: glow 1s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: none;
+                /* text-shadow: 0 0 20px #fff, 0 0 30px #25ff1e, 0 0 40px #25ff1e, 0 0 50px #25ff1e, 0 0 60px #25ff1e, 0 0 70px #25ff1e, 0 0 80px #25ff1e; */
+
+            }
+
+            to {
+                /* text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #25ff1e, 0 0 40px #25ff1e, 0 0 50px #25ff1e, 0 0 60px #25ff1e, 0 0 70px #25ff1e; */
+                text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #25ff1e, 0 0 40px #25ff1e;
+
+            }
+        }
+
+        .loader {
+            background: rgb(76, 173, 60);
+            background: linear-gradient(180deg, rgba(76, 173, 60, 1) 0%, rgba(253, 253, 253, 1) 100%);
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            margin: auto;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            z-index: 1000;
+            overflow: hidden;
+
+        }
+
+        .loadlogo {
+            padding-top: 10%;
+            position: relative;
+            margin: auto;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            text-align: center;
+            align-items: center;
+            margin-bottom: 0.5vw;
+        }
+
+        .loadh1 {
+            padding-top: 10vw;
+            position: relative;
+            font-size: 3vw;
+            color: darkslategrey;
+            font-family: 'Bad Script', cursive;
+            text-align: center;
+            display: block;
+
+        }
+
+        .hide {
+            opacity: 0;
+            transition: opacity ease;
+        }
+
+        .disp {
+            display: none;
+        }
+        @media(max-width:500px){
+    .loadlogo{
+        padding-top: 50%;
+    }
+}
+    </style>
+</head>
+
+<body>
+    <div class="loader">
+        <div class="loadlogo">
+            <img src="./img/logo.png" alt="" width="180" height="200">
+        </div>
+        <h1 class="loadh1 animate__animated animate__fadeInLeft">Unleashing Creativity..</h1>
+
+    </div>
+    <div class="logo">
+        <img src="./img/logo1.png" alt="" width="70" height="18">
+    </div>
+
+    <section class="header">
+        <div class="container">
+
+            <h1 class="title kalak"><span>KALAKRITI</span></h1>
+            <p class="kala-p">The Annual Art & Photography Exhibition at Arohan Fest, NIT Durgapur</p>
+            <h2 class="title" style="font-family: 'Raleway', sans-serif;font-size:3vw; text-align: right;">~ by STROKES
+            </h2>
+        </div>
+    </section>
+    <div class="pattern"></div>
+
+    <section class="para">
+        <div class="container one">
+            <div class="row">
+                <p>A multitude of spectators of life's poise, making exquisite decisions in a flash,<strong>Team
+                        STROKES</strong> , heartily
+                    welcomes you to <strong>Kalakriti</strong>, the annual art and photography exhibition, and urges you
+                    to
+                    indulge in the pleasure of believing in graceful lies.</p>
+                <br>
+                <br>
+                <p>Come, Experience the myriad of influences which we dare to call Inspiration, without any guilt.</p>
+            </div>
+            <div class="row glowing">
+                <h1>KALAKRITI 7TH EDITION IS HERE</h1>
+                <a href="" style="text-decoration: none;">
+                    <p class="kalap glow" style="font-size:x-large;">Click here to tour through our virtual exhibition
+                        and experience the bewildering
+                        gallery</p>
+            </div>
+        </div>
+        <div class="container two" style="margin-top: 15px;">
+            <div class="portfolio-menu mt-2 mb-4">
+                <ul style="display: none;">
+                    <!-- <li class="btn btn-outline-dark active" id="cl"  data-filter="*">All</li> -->
+                    <li class="btn btn-outline-dark active" id="k1" data-filter=".k">kk</li>
+
+                </ul>
+            </div>
+            <div class="portfolio-item row">
+                <div class="item k col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/kalakriti/1.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/kalakriti/1.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item k col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/kalakriti/2.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/kalakriti/2.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item k col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/kalakriti/3.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/kalakriti/3.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item k col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/kalakriti/4.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/kalakriti/4.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item k col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/kalakriti/5.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/kalakriti/5.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item k col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/kalakriti/6.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/kalakriti/6.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item k col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/kalakriti/7.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/kalakriti/7.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item k col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/kalakriti/8.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/kalakriti/8.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item k col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/kalakriti/9.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/kalakriti/9.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item k col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/kalakriti/10.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/kalakriti/10.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item k col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/kalakriti/11.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/kalakriti/11.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item k col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/kalakriti/12.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/kalakriti/12.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item k col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/kalakriti/13.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/kalakriti/13.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item k col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/kalakriti/14.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/kalakriti/14.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item k col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/kalakriti/15.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/kalakriti/15.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item k col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/kalakriti/16.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/kalakriti/16.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item k col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/kalakriti/17.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/kalakriti/17.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item k col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/kalakriti/18.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/kalakriti/18.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item k col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/kalakriti/19.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/kalakriti/19.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item k col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/kalakriti/20.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/kalakriti/20.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item k col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/kalakriti/21.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/kalakriti/21.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item k col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/kalakriti/22.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/kalakriti/22.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item k col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/kalakriti/23.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/kalakriti/23.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item k col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/kalakriti/24.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/kalakriti/24.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item k col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/kalakriti/25.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/kalakriti/25.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item k col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/kalakriti/26.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/kalakriti/26.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item k col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/kalakriti/27.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/kalakriti/27.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item k col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/kalakriti/28.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/kalakriti/28.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item k col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/kalakriti/29.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/kalakriti/29.jpg" alt="">
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+    <section id="footer">
+        <div class="row text-center copyrights">
+            <div class="col-lg-12" style="padding: 0;">
+                <div class="social">
+                    <ul>
+                        <li><a href="https://www.facebook.com/Strokes.NITD/"><i
+                                    class="fab fa-facebook-square"></i></i></a>
+                        </li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="https://www.instagram.com/wearestrokes/"><i class="fab fa-instagram"></i></a>
+                        </li>
+                        <li><a href="https://www.youtube.com/channel/UC43_ERuEtBeaZoCCAWiBdaw/featured"><i
+                                    class="fab fa-youtube"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <p style="align-items: center; margin-left:auto;">&copy; 2021 STROKES. All rights reserved.<br>
+                    <a href="index.html" rel="nofollow"><strong>BACK TO HOME</strong></a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css" />
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js"></script>
+
+    <script src="js/app.js"></script>
+    <script src="js/isotope.js"></script>
+
+    <script>
+        if($(window).width>400){
+        $(window).resize(function () { location.reload(); });}
+        window.onload = function () {
+            document.getElementById('k1').click();
+        }
+        function run() {
+            $('.portfolio-item').isotope({
+                itemSelector: '.item',
+                percentPosition: true,
+                filter: '.k',
+                layoutMode: "masonry",
+                percentPosition: true,
+                masonry: {
+                    // columnWidth: '.grid-sizer',
+                    fitWidth: true,
+                }
+            });
+        }
+
+        $('.portfolio-menu ul li').click(function () {
+            $('.portfolio-menu ul li').removeClass('active');
+            $(this).addClass('active');
+
+            var selector = $(this).attr('data-filter');
+            $('.portfolio-item').isotope({
+                filter: selector
+            });
+            return false;
+        });
+        $(document).ready(function () {
+            var popup_btn = $('.popup-btn');
+            popup_btn.magnificPopup({
+                type: 'image',
+                gallery: {
+                    enabled: true
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

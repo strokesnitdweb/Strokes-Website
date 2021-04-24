@@ -1,0 +1,677 @@
+*{
+    margin:0;
+    padding:0;
+}
+html,body
+{
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+    scroll-behavior: smooth!important;
+}
+a{
+    color: whitesmoke;
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+    color: whitesmoke;
+}
+.hide {
+    opacity: 0;
+    transition:opacity ease;
+}
+.disp{
+    display:none;
+}
+
+.loader{
+    background: rgb(76,173,60);
+    background: linear-gradient(180deg, rgba(76,173,60,1) 0%, rgba(253,253,253,1) 100%);
+    position:fixed;
+    width:100%;
+    height:100%;
+    margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+    z-index:1000;
+    overflow:hidden;
+
+}
+.loadlogo{
+    padding-top: 10%;
+    position: relative;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  text-align: center;
+  align-items: center;
+  margin-bottom: 0.5vw;
+}
+.loadh1{
+    padding-top: 10vw;
+    position: relative;
+    font-size:3vw;
+    color:darkslategrey;
+    font-family: 'Bad Script', cursive;
+    text-align:center;
+    display:block;
+
+}
+
+
+#header{
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+}
+
+.navbar{
+    padding: 10px 0;
+}
+
+.navbar-dark .navbar-brand{
+    color:whitesmoke
+}
+
+.nav-item{
+    font-weight: 600;
+    text-transform: uppercase;
+    padding-left: 10px;
+
+}
+/* .nav-item.active{
+    color: red!important;
+} */
+
+
+.navbar-dark .navbar-nav .nav-item .nav-link:hover{
+    display: inline-flex;
+    color: white;
+    text-shadow: 0 0 10px #aaff00
+}
+.navbar-dark .navbar-nav .nav-item .nav-link:focus{
+    display: inline-flex;
+    color: white;
+    text-shadow: 0 0 10px #aaff00
+}
+
+
+
+.main{
+    position: relative;
+    background-image: -webkit-linear-gradient(rgba(0,0,0, 0.3) 0%,rgba(0,0,0, 1) 100%),url(./img/IMG-3.jpg);
+    z-index: 1;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    padding:220px 0 200px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+.main .row{
+    align-items: center;
+    text-align: center;
+}
+
+.main h1{
+    margin: 0 auto;
+    padding: 0;
+    font-family: 'Teko', sans-serif;
+    font-size: 12vw;
+    color:whitesmoke;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.2vw;
+    text-align:center;
+}
+
+.main p{
+    margin-top:0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    font-size:2.5vw;
+    color:whitesmoke;
+    font-family: 'Bad Script', cursive;
+    text-align:center;
+
+}
+.main p::before{
+    content:open-quote;
+    color: yellowgreen;
+    font-size: 4vw;
+    display:inline-block;
+    margin: 0;
+    padding: 0;
+    /* margin-top:1em;
+    padding: 0;
+    font-size:2vw;
+    color:whitesmoke;
+    font-family: 'Bad Script', cursive; */
+
+}
+
+
+.nav-link{
+    margin: 0;
+}
+@media(max-width:500px){
+    .loadlogo{
+        padding-top: 50%;
+    }
+}
+
+
+@media(max-width:958px) {
+    .main{
+        padding: 200px 0;
+    }
+
+    .main h2{
+        font-size: 2em;
+    }
+    /* .navbar-collapse{
+        background-image: linear-gradient(to top, rgba(166, 193, 238, 0.6)0%, rgba(112, 62, 122, 0.6)100%);
+        
+    } */
+    .navbar-brand{
+        width: 30%;
+    }
+    .navbar-brand img{
+        padding-left: 3vw;
+    }
+    .con-fade{
+        margin-top: 6vw!important;
+    }
+    
+}
+@media(min-width:958px){
+    .navbar-brand{
+        position: absolute;
+        left: 51%;
+        display: block;
+        text-align: center;
+        background-color: transparent;
+        display:flex; width:20% ;  padding:0;
+    }
+    .navbar>.container .navbar-brand, 
+    .navbar>.container-fluid .navbar-brand {
+        margin-left: -80px;
+    }
+    .navbar{
+        transition: 500ms ease;
+        background:transparent;
+    }
+}
+.navbar-brand{
+    display:flex; width:20% ; margin:0; padding:0;
+}
+li > a{
+    margin-left: 3vw;
+}
+
+.navbar-toggler{
+    border-color:transparent!important;
+    outline: none!important;
+}
+.navbar-toggler:focus{
+    box-shadow: none;
+}
+
+#about{
+    font-family: 'Raleway', sans-serif;
+}
+
+#about .row{
+    margin:10vw;
+}
+
+#about div > h2{
+    font-weight: 600;
+}
+
+#about div > h4{
+    font-weight: 300;
+}
+#about div > hr{
+    height: 3px;
+    width: 70px;
+    position:relative;
+    background: #c0f558;
+    margin-left: 0;
+    align-self: center;
+    margin-bottom: 40px;
+    border: 0;
+    opacity: 1;
+}
+
+
+#about div > p{
+    color:#777;
+    line-height: 24px;
+    font-weight: 200;
+}
+
+#about div > div > img{
+    
+    width:200%;
+    height: auto;
+}
+.con-fade {
+    margin-top: 4vw;
+    position: relative;
+    width: 50%;
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width:200%;
+    opacity: 0;
+    transition: .5s ease-in-out;
+    background-color: #aaff00;
+}
+.con-fade{
+    margin-top: 4vw;
+}
+  
+  .con-fade:hover .overlay {
+    opacity: 0.4;
+  }
+
+  .con-fade:focus .overlay {
+    opacity: 0.4;
+  }
+  .text {
+    color:black;
+    font-size: 2vw;
+    font-weight: 600;
+    display: inline;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    
+    width: 100%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+.dark.scrolled {
+    background-color: rgb(32, 46, 3)!important;
+    color: black;
+}
+
+/* kalakriti */
+
+.kalakriti
+{
+    scroll-behavior: smooth!important;
+    position: relative;
+    background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 100%), url(./img/2.jpg);
+    z-index: 1;
+    min-height: 40vh;
+    background-size: cover;
+    background-position: center;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    align-items: center;
+    color: antiquewhite;
+}
+.kala-h1{
+    font-family: 'Eczar', serif;
+    font-size: 6vw;
+    font-weight: 500;
+}
+.kalakriti h1:hover{
+    text-shadow: 0 0 10px #aaff00!important; 
+    transition: 300ms ease;
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+
+}
+.kala-p{
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px;
+    font-weight: 100;
+    align-items: center;
+    text-align: center;
+}
+.kala-paral{
+    will-change: transform;
+     /* The image used */
+     background: -webkit-linear-gradient(rgba(0,0,0, 0) 0%,rgba(0,0,0, 1) 100%), url("./img/kalakriti/2.jpg");
+  
+     /* Set a specific height */
+     min-height: 500px;
+   
+     /* Create the parallax scrolling effect */
+     background-attachment: fixed;
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+
+}
+
+
+
+#hue-bw .row{
+    margin: 0;
+    font-family: 'Noto Sans JP', sans-serif;
+    
+}
+#hue-bw div> .hue{
+    margin: 0;
+    background: -webkit-linear-gradient(rgba(0,0,0, 0) 0%,rgba(0,0,0, 1) 100%),url(./img/hue.jpg);
+    align-items: center;
+    z-index: 1;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    padding:220px 0 200px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+#hue-bw div> .bw{
+    margin: 0;
+    background: -webkit-linear-gradient(rgba(0,0,0, 0) 0%,rgba(0,0,0, 1) 100%),url(./img/bnw.jpg);
+    z-index: 1;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    padding:220px 0 200px;
+    display: flex;
+    align-items: center;
+    text-align: center; 
+    position: relative;
+}
+
+.hue-bw{
+    font-size: 7vw; 
+    color: white;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+}
+.hue-bw:hover { 
+    text-shadow: 0 0 10px #aaff00; 
+    transition: 300ms ease;
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+}
+
+
+.center{
+    position: -webkit-sticky; /* Safari */
+    position: absolute;
+    left: 48.2%;
+    /* top: 370%;  */
+   /* margin-left: -150px;
+   margin-top: -150px; */
+   background: rgb(76,173,60);
+background: linear-gradient(90deg, rgba(76,173,60,1) 0%, rgba(253,253,253,1) 65%);
+-webkit-text-fill-color: transparent;
+   z-index: 2;
+}
+
+/* artisque lightbox */
+
+/* You define the style of our previews here, you are using flex to display the images 
+   "responsively". */
+   /* .art{
+    position: relative;
+    background-image: -webkit-linear-gradient(rgba(0,0,0, 0) 0%,rgba(0,0,0, 1) 100%),url(./img/art-bg.jpg);
+    z-index: 1;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    text-align: center;
+   } */
+
+   .art{
+    scroll-behavior: smooth!important;
+    position: relative;
+    background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 100%), url(./img/art11.jpg);
+    z-index: 1;
+    min-height: 40vh;
+    background-size: cover;
+    background-position: center;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    align-items: center;
+    color: antiquewhite;
+   }
+   .art h1:hover{
+    text-shadow: 0 0 10px #aaff00!important; 
+    transition: 300ms ease;
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+
+}
+   .parallax {
+    /* The image used */
+    background: -webkit-linear-gradient(rgba(0,0,0, 0) 0%,rgba(0,0,0, 1) 100%), url("./img/art11.jpg");
+  
+    /* Set a specific height */
+
+    min-height: 500px;
+  
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+   .preview {
+    width: 100%;
+  }
+  
+  .art.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .art.row > .col {
+    padding: 0 8px;
+  }
+  
+  .art.col {
+    float: left;
+    width: 25%;
+  }
+  /* lightbox */
+
+  .portfolio-menu{
+	text-align:center;
+}
+.portfolio-menu ul li{
+    border-color: chartreuse;
+    color: beige;
+	display:inline-block;
+	margin:0;
+	list-style:none;
+	padding:10px 15px;
+	cursor:pointer;
+	-webkit-transition:all 05s ease;
+	-moz-transition:all 05s ease;
+	-ms-transition:all 05s ease;
+	-o-transition:all 05s ease;
+	transition:all .5s ease;
+}
+
+/* .portfolio-item{
+	width:100%;
+} */
+.portfolio-item .item{
+	/*width:303px;*/
+	float:left;
+	margin-bottom:10px;
+}
+.art-h1{
+    font-size: 6vw;
+    font-weight: 500;
+    color: beige;
+
+}
+.art-hr{
+    height: 4px;
+    width: 70px;
+    position:relative;
+    background: #c0f558;
+    margin-left: 0;
+    align-self: center;
+    margin-bottom: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 0;
+    opacity: 1;
+}
+.art-hr.hr{
+    margin-bottom: 10px;
+}
+
+
+/* contact */
+
+.contact .row.one{
+    /* margin-top: 5vw; */
+    background:yellowgreen;
+    color: white;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+.contact .col-lg-12{
+    padding: 5vw 0;
+}
+.contact .res {
+    font-size: 3vw; 
+    color: white;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.contact .row.two{
+    margin: 0;
+    background: -webkit-linear-gradient(rgba(0, 0, 0, 0.9) 0%,rgb(0, 0, 0,0) 100%),-webkit-linear-gradient(rgba(0, 0, 0, 0) 0%,rgb(0, 0, 0,0.5) 100%),url(./img/contact.jpg) no-repeat;
+    z-index: 2;
+    
+    min-height: 80vh;
+    background-size:cover;
+    background-position: center;
+    padding:100px 0 100px;
+    display: flex;
+    color: white;
+    font-family: 'Noto Sans JP', sans-serif;
+
+}
+
+.row.two .col-lg-6 h1{
+    font-size: 6vw; 
+    color: white;
+    align-items: center;
+    text-align:center;
+    margin-bottom: 5vw ;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.row.two .col-lg-6 p{
+
+    font-size: 2vw; 
+    color: white;
+    align-items: center;
+    text-align:left;
+    padding-left: 5vw;
+    margin: 2vw auto;
+    margin-bottom: 4vw;
+}
+.row.two .col-lg-6 p:hover{
+    text-shadow: 0 0 10px #aaff00!important; 
+    transition: 300ms ease;
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+}
+
+/* footer */
+
+#footer {
+	background: #262626;
+	padding: 50px 0 0 0;
+}
+#footer h3 {
+	color: #8eb640;
+	font-weight: 400;
+	font-size: 18px;
+	text-transform: uppercase;
+	margin-bottom: 20px;
+}
+#footer .copyrights {
+	padding: 20px 0;
+	margin-top: 50px;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#779936+0,8eb640+50 */
+	background: rgb(119,153,54); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(119,153,54,1) 0%, rgba(142,182,64,1) 50%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(119,153,54,1) 0%, rgba(142,182,64,1) 50%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(119,153,54,1) 0%, rgba(142,182,64,1) 50%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#779936', endColorstr='#8eb640', GradientType=0 ); /* IE6-9 */
+}
+#footer .social {
+	margin: 20px 0 30px 0;
+}
+#footer .social ul li {
+	display: inline-block;
+	margin: 0 20px;
+}
+#footer .social i.fab{
+	font-size: 26px;
+	padding: 4px;
+	color: #fff;
+	transition: all 0.3s;
+}
+#footer .social i.fab:hover {
+	color: #eee;
+}
+#footer p {
+	font-size: 1.5vw;
+    text-align: center;
+    align-items: center;
+	color: rgba(255,255,255,0.8)
+}
+#footer h3{
+    font-size: 2vw;
+}
+#footer a {
+	color: #f6f6f6;
+}
+#footer a:hover {
+	color: #333;
+    text-decoration: none;
+}
+
+
+
+
+
+
+

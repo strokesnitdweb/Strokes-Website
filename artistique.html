@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="./img/Logo V1_FaceOnly.png" type="image/png">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700&family=Teko&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" />
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bad+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;600&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="./styles.css"> -->
+
+    <title>STROKES-ART</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            overflow-x: hidden;
+            scroll-behavior: smooth !important;
+        }
+
+        .header {
+            position: relative;
+            background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 100%), url(./img/hue-bg.jpg);
+            z-index: 1;
+            min-height: 40vh;
+            background-size: cover;
+            background-position: center;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+
+        @media(min-width:1000px) {
+            .header {
+                height: 65vh;
+            }
+        }
+
+        @media(max-width:400px) {
+            #footer a {
+                font-size: 17px;
+            }
+        }
+
+        .row {
+            margin: 0;
+        }
+
+        .title {
+            padding: 4vw;
+            font-family: 'Teko', sans-serif;
+            font-size: 50px;
+            line-height: 0;
+            letter-spacing: -20px;
+            color: whitesmoke;
+            text-transform: uppercase;
+            font-weight: bold;
+            text-align: center;
+            writing-mode: vertical-rl;
+            text-orientation: upright;
+        }
+
+        .parallax {
+            /* The image used */
+            background: -webkit-linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%), url("./img/art11.jpg");
+
+            /* Set a specific height */
+            min-height: 500px;
+
+            /* Create the parallax scrolling effect */
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .preview {
+            width: 100%;
+        }
+
+        .art.row {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .art.row>.col {
+            padding: 0 8px;
+        }
+
+        .art.col {
+            float: left;
+            width: 25%;
+        }
+
+
+
+        /* lightbox */
+
+
+        .portfolio-menu {
+            text-align: center;
+        }
+
+        .portfolio-menu ul li {
+            border-color: chartreuse;
+            color: beige;
+            display: inline-block;
+            margin: 0;
+            list-style: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            -webkit-transition: all 05s ease;
+            -moz-transition: all 05s ease;
+            -ms-transition: all 05s ease;
+            -o-transition: all 05s ease;
+            transition: all .5s ease;
+        }
+
+        /* .portfolio-item{
+	width:100%;
+} */
+        /* .grid-sizer,
+        .portfolio-item {
+            width: 20%;
+        } */
+        /* .portfolio-item.width2 { width: 400px; }
+		.portfolio-item.height2 { height: 400px; } */
+
+        .portfolio-item .item {
+            /*width:303px;*/
+            float: left;
+            margin-bottom: 10px;
+            margin-top: 10px;
+        }
+
+        .art-h1 {
+            font-size: 5vw;
+            font-weight: 500;
+            color: beige;
+
+        }
+
+        .art-hr {
+            height: 4px;
+            width: 70px;
+            position: relative;
+            background: #c0f558;
+            margin-left: 0;
+            align-self: center;
+            margin-bottom: 40px;
+            margin-left: auto;
+            margin-right: auto;
+            border: 0;
+            opacity: 1;
+        }
+
+        .art-hr.hr {
+            margin-bottom: 10px;
+        }
+
+        .logo {
+            position: fixed;
+            right: 3px;
+            top: 0;
+            z-index: 2;
+        }
+
+        /* footer */
+
+        #footer {
+            background: #262626;
+            padding: 0;
+        }
+
+        #footer h3 {
+            color: #8eb640;
+            font-weight: 400;
+            font-size: 18px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        #footer .copyrights {
+            padding: 20px 0;
+            /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#779936+0,8eb640+50 */
+            background: rgb(119, 153, 54);
+            /* Old browsers */
+            background: -moz-linear-gradient(top, rgba(119, 153, 54, 1) 0%, rgba(142, 182, 64, 1) 50%);
+            /* FF3.6-15 */
+            background: -webkit-linear-gradient(top, rgba(119, 153, 54, 1) 0%, rgba(142, 182, 64, 1) 50%);
+            /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(to bottom, rgba(119, 153, 54, 1) 0%, rgba(142, 182, 64, 1) 50%);
+            /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#779936', endColorstr='#8eb640', GradientType=0);
+            /* IE6-9 */
+        }
+
+        #footer .social {
+            margin: 20px 0 30px 0;
+        }
+
+        #footer .social ul li {
+            display: inline-block;
+            margin: 0 20px;
+        }
+
+        #footer .social i.fab {
+            font-size: 26px;
+            padding: 4px;
+            color: #fff;
+            transition: all 0.3s;
+        }
+
+        #footer .social i.fab:hover {
+            color: #eee;
+        }
+
+        #footer p {
+            font-size: 1.5vw;
+            text-align: center;
+            align-items: center;
+            color: rgba(255, 255, 255, 0.8)
+        }
+
+        #footer h3 {
+            font-size: 2vw;
+        }
+
+        #footer a {
+            color: #f6f6f6;
+
+        }
+
+        #footer a:hover {
+            color: #333;
+            text-decoration: none;
+        }
+
+        .loader {
+            background: rgb(76, 173, 60);
+            background: linear-gradient(180deg, rgba(76, 173, 60, 1) 0%, rgba(253, 253, 253, 1) 100%);
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            margin: auto;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            z-index: 1000;
+            overflow: hidden;
+
+        }
+
+        .loadlogo {
+            padding-top: 10%;
+            position: relative;
+            margin: auto;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            text-align: center;
+            align-items: center;
+            margin-bottom: 0.5vw;
+        }
+
+        .loadh1 {
+            padding-top: 10vw;
+            position: relative;
+            font-size: 3vw;
+            color: darkslategrey;
+            font-family: 'Bad Script', cursive;
+            text-align: center;
+            display: block;
+
+        }
+
+        .hide {
+            opacity: 0;
+            transition: opacity ease;
+        }
+
+        .disp {
+            display: none;
+        }
+        @media(max-width:500px){
+    .loadlogo{
+        padding-top: 50%;
+    }
+}
+    </style>
+</head>
+
+<body>
+    <div class="loader">
+        <div class="loadlogo">
+            <img src="./img/logo.png" alt="" width="180" height="200">
+        </div>
+        <h1 class="loadh1 animate__animated animate__fadeInLeft">Unleashing Creativity..</h1>
+
+    </div>
+
+    <section class="header">
+        <h1 class="title"><span style="color:palegreen;">S</span><span style="color: yellow;">t</span><span
+                style="color: yellowgreen;">r</span><span style="color:palevioletred;">o</span><span
+                style="color:royalblue;">k</span><span style="color:tomato;">e</span><span
+                style="color:palegreen ;">s</span>
+        </h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center my-2">
+                    <hr class="art-hr hr">
+                    <h1 class="art-h1">ART<span style="font-family: 'Bad Script', cursive;">istique</span></h1>
+                    <hr class="art-hr">
+                </div>
+            </div>
+            <div class="portfolio-menu mt-2 mb-4">
+                <ul>
+                    <!-- <li class="btn btn-outline-dark active" data-filter="*">All</li> -->
+                    <li class="btn btn-outline-dark" id="cl" data-filter=".port">PORTRAIT</li>
+                    
+                    <li class="btn btn-outline-dark" data-filter=".ab">ABSTRACT</li>
+                    
+                    <li class="btn btn-outline-dark" data-filter=".land">LANDSCAPE</li>
+                    <li class="btn btn-outline-dark" data-filter=".hyp">HYPER REALISTIC</li>
+                    <li class="btn btn-outline-dark" data-filter=".mono">MONOCHROME</li>
+                    <li class="btn btn-outline-dark active"  data-filter=".wall">WALL ART</li>
+                    <li class="btn btn-outline-dark" data-filter=".sculp">SCULPTURE</li>
+                </ul>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 text-center my-2">
+                    <hr class="art-hr hr">
+                    <h1 class="art-h1">SERIES</h1>
+                    <hr class="art-hr">
+                </div>
+            </div>
+            <div class="portfolio-menu mt-2 mb-4">
+                <ul>
+                    <!-- <li class="btn btn-outline-dark active" data-filter="*">All</li> -->
+                    <li class="btn btn-outline-dark cll" data-filter=".quar">QUARANTONES</li>
+                    <li class="btn btn-outline-dark cll" data-filter=".ink">INKTOBER</li>
+                    <li class="btn btn-outline-dark cll" data-filter=".the">The Vincent Palettes</li>
+                </ul>
+            </div>
+
+
+        </div>
+    </section>
+
+    <section class="art parallax">
+
+        <div class="container">
+            <div class="portfolio-item row">
+                <div class="item wall col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/wall/1.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/wall/1.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item sculp col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/sculpture/1.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/sculpture/1.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item port col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/portrait/1.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/portrait/1.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item land col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/landscape/1.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/landscape/1.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item hyp col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/hyper realistic/1.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/hyper realistic/1.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item mono col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/mono/1.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/mono/1.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item wall col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/wall/2.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/wall/2.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item sculp col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/sculpture/2.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/sculpture/2.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item port col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/portrait/2.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/portrait/2.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item land col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/landscape/2.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/landscape/2.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item hyp col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/hyper realistic/2.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/hyper realistic/2.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item mono col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/mono/2.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/mono/2.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item wall col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/wall/3.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/wall/3.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item sculp col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/sculpture/3.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/sculpture/3.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item port col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/portrait/3.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/portrait/3.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item land col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/landscape/3.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/landscape/3.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item hyp col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/hyper realistic/3.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/hyper realistic/3.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item mono col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/mono/3.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/mono/3.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item wall col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/wall/4.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/wall/4.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item sculp col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/sculpture/4.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/sculpture/4.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item port col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/portrait/4.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/portrait/4.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item land col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/landscape/4.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/landscape/4.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item hyp col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/hyper realistic/4.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/hyper realistic/4.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item mono col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/mono/4.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/mono/4.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item wall col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/wall/5.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/wall/5.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item port col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/portrait/5.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/portrait/5.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item land col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/landscape/5.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/landscape/5.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item hyp col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/hyper realistic/5.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/hyper realistic/5.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item mono col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/mono/5.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/mono/5.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item wall col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/wall/6.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/wall/6.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item port col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/portrait/6.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/portrait/6.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item hyp col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/hyper realistic/6.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/hyper realistic/6.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item mono col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/mono/6.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/mono/6.jpg" alt="">
+                    </a>
+                </div>
+
+                <div class="item port col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/portrait/7.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/portrait/7.jpg" alt="">
+                    </a>
+                </div>
+
+                <div class="item hyp col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/hyper realistic/7.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/hyper realistic/7.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item mono col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/mono/7.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/mono/7.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item port col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/portrait/8.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/portrait/8.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item hyp col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/hyper realistic/8.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/hyper realistic/8.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item mono col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/mono/8.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/mono/8.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item port col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/portrait/9.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/portrait/9.jpg" alt="">
+                    </a>
+                </div>
+
+                <div class="item hyp col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/hyper realistic/9.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/hyper realistic/9.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item mono col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/mono/9.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/mono/9.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item port col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/portrait/10.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/portrait/10.jpg" alt="">
+                    </a>
+                </div>
+
+                <div class="item hyp col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/hyper realistic/10.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/hyper realistic/10.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item mono col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/mono/10.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/mono/10.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item port col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/portrait/11.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/portrait/11.jpg" alt="">
+                    </a>
+                </div>
+
+                <div class="item hyp col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/hyper realistic/11.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/hyper realistic/11.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item mono col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/mono/11.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/mono/11.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item port col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/portrait/12.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/portrait/12.jpg" alt="">
+                    </a>
+                </div>
+
+                <div class="item hyp col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/hyper realistic/12.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/hyper realistic/12.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item mono col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/mono/12.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/mono/12.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item port col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/portrait/13.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/portrait/13.jpg" alt="">
+                    </a>
+                </div>
+
+                <div class="item mono col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/mono/13.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/mono/13.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item port col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/portrait/14.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/portrait/14.jpg" alt="">
+                    </a>
+                </div>
+
+                <div class="item mono col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/mono/14.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/mono/14.jpg" alt="">
+                    </a>
+                </div>
+
+                <div class="item port col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/portrait/15.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/portrait/15.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item port col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/portrait/16.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/portrait/16.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item ab col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/abstract/1.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/abstract/1.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item ab col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/abstract/2.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/abstract/2.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item ab col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/abstract/3.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/abstract/3.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item ab col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/abstract/4.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/abstract/4.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item ab col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/abstract/5.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/abstract/5.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item ab col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/abstract/6.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/abstract/6.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item ab col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/abstract/7.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/abstract/7.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item ab col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/abstract/8.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/abstract/8.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item ab col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/abstract/9.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/abstract/9.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item ab col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/abstract/10.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/abstract/10.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item ab col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/abstract/11.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/abstract/11.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item ab col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/abstract/12.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/abstract/12.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item ab col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/abstract/13.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/abstract/13.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item ab col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/abstract/14.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/abstract/14.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item ab col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/abstract/15.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/abstract/15.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item the col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/vincent palettes/1.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/vincent palettes/1.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item quar col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/quarantones/1.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/quarantones/1.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item ink col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/inktober/1.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/inktober/1.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item the col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/vincent palettes/2.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/vincent palettes/2.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item quar col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/quarantones/2.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/quarantones/2.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item ink col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/inktober/2.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/inktober/2.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item the col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/vincent palettes/3.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/vincent palettes/3.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item quar col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/quarantones/3.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/quarantones/3.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item ink col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/inktober/3.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/inktober/3.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item the col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/vincent palettes/4.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/vincent palettes/4.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item quar col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/quarantones/4.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/quarantones/4.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item ink col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/inktober/4.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/inktober/4.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item the col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/vincent palettes/5.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/vincent palettes/5.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item quar col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/quarantones/5.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/quarantones/5.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item ink col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/inktober/5.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/inktober/5.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item the col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/vincent palettes/6.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/vincent palettes/6.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item quar col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/quarantones/6.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/quarantones/6.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item ink col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/inktober/6.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/inktober/6.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item the col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/vincent palettes/7.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/vincent palettes/7.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item quar col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/quarantones/7.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/quarantones/7.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item ink col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/inktober/7.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/inktober/7.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item the col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/vincent palettes/8.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/vincent palettes/8.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item quar col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/quarantones/8.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/quarantones/8.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item ink col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/inktober/10.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/inktober/10.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item ink col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/inktober/9.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/inktober/9.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item ink col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="./img/Art/inktober/8.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="./img/Art/inktober/8.jpg" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="logo">
+        <img src="./img/logo1.png" alt="" width="70" height="18">
+    </div>
+    <section id="footer">
+        <div class="row text-center copyrights">
+            <div class="col-lg-12" style="padding: 0;">
+                <div class="social">
+                    <ul>
+                        <li><a href="https://www.facebook.com/Strokes.NITD/"><i
+                                    class="fab fa-facebook-square"></i></i></a>
+                        </li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="https://www.instagram.com/wearestrokes/"><i class="fab fa-instagram"></i></a>
+                        </li>
+                        <li><a href="https://www.youtube.com/channel/UC43_ERuEtBeaZoCCAWiBdaw/featured"><i
+                                    class="fab fa-youtube"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <p style="align-items: center; margin-left:auto;">&copy; 2021 STROKES. All rights reserved.<br>
+                    <a href="index.html" rel="nofollow"><strong>BACK TO HOME</strong></a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css" />
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js"></script>
+
+    <script src="js/app.js"></script>
+    <script src="js/isotope.js"></script>
+    <script>
+        
+        if($(window).width>400){
+        $(window).resize(function () { location.reload(); });}
+        window.onload = function () {
+            document.getElementById('cl').click();
+        }
+        function run() {
+            $('.portfolio-item').isotope({
+                itemSelector: '.item',
+                percentPosition: true,
+                layoutMode: "masonry",
+                filter: '.port',
+                percentPosition: true,
+                masonry: {
+                    // columnWidth: '.grid-sizer',
+                    fitWidth: true,
+                }
+            });
+        }
+        $('.portfolio-menu ul li').click(function () {
+            $('.portfolio-menu ul li').removeClass('active');
+            $(this).addClass('active');
+
+            var selector = $(this).attr('data-filter');
+            $('.portfolio-item').isotope({
+                filter: selector
+            });
+            return false;
+        });
+
+        $(document).ready(function () {
+            var popup_btn = $('.popup-btn');
+            popup_btn.magnificPopup({
+                type: 'image',
+                gallery: {
+                    enabled: true
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

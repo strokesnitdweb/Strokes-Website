@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./img/Logo V1_FaceOnly.png" type="image/png">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700&family=Teko&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bad+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;600&display=swap" rel="stylesheet">
+
+    <title>STROKES-BNW</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            width: 100%;
+            margin: 0px;
+            padding: 0px;
+            overflow-x: hidden;
+            scroll-behavior: smooth !important;
+        }
+
+        body {
+            background: -webkit-linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+        }
+
+        .row.one {
+
+            background: black;
+            color: floralwhite;
+            font-family: 'Raleway', sans-serif;
+            margin-bottom: 5vw;
+        }
+
+
+        .one>.col {
+            padding-top: 3vw;
+            text-align: center;
+
+        }
+
+
+        .one>.poly {
+            background: white;
+            clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 14% 100%, 39% 49%, 14% 0);
+            padding-top: 6vw;
+        }
+
+        .one>.col>h1 {
+            font-weight: 100;
+            font-size: 8vw;
+            /* text-align: center; */
+
+        }
+
+        .one>.col>h3 {
+            font-weight: 100;
+            font-size: 15px;
+            margin-left: 0;
+            padding-bottom: 3px;
+            /* text-align: center; */
+        }
+
+
+
+
+        @media (max-width: 1200px) {
+            .row.one {
+                height: 200px;
+            }
+        }
+
+        @media (max-width: 1000px) {
+            .row.one {
+                height: 20vw;
+
+            }
+        }
+
+        @media (max-width: 800px) {
+            .one>.txt {
+                padding-top: 12vw;
+            }
+
+            .row.one {
+                height: 200px;
+            }
+
+            #footer a {
+                font-size: 17px;
+            }
+        }
+
+        @media (max-width: 350px) {
+            #footer a {
+                font-size: 17px;
+            }
+
+        }
+
+        /* lightbox */
+
+        /* .portfolio-item{
+	width:100%;
+} */
+        .tw.row {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .row {
+            margin: 0;
+        }
+
+        .tw.row>.col {
+            padding: 0 8px;
+        }
+
+        .tw.col {
+            float: left;
+            width: 25%;
+        }
+
+        .portfolio-item .item {
+            /*width:303px;*/
+            float: left;
+            margin-bottom: 10px;
+        }
+
+        @media(max-width:400px) {
+            .kala-p {
+                font-size: 10px !important;
+            }
+
+            #footer a {
+                font-size: 15px;
+            }
+        }
+
+        /* footer */
+
+        #footer {
+            background: #262626;
+            padding: 0;
+        }
+
+        #footer h3 {
+            color: #8eb640;
+            font-weight: 400;
+            font-size: 18px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        #footer .copyrights {
+            padding: 20px 0;
+            /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#779936+0,8eb640+50 */
+            background: #262626;
+            /* Old browsers */
+
+        }
+
+        #footer .social {
+            margin: 20px 0 30px 0;
+        }
+
+        #footer .social ul li {
+            display: inline-block;
+            margin: 0 20px;
+        }
+
+        #footer .social i.fab {
+            font-size: 26px;
+            padding: 4px;
+            color: #fff;
+            transition: all 0.3s;
+        }
+
+        #footer .social i.fab:hover {
+            color: #eee;
+        }
+
+        #footer p {
+            font-size: 1.5vw;
+            text-align: center;
+            align-items: center;
+            color: rgba(255, 255, 255, 0.8)
+        }
+
+        #footer h3 {
+            font-size: 2vw;
+        }
+
+        #footer a {
+            color: #f6f6f6;
+
+        }
+
+        #footer a:hover {
+            color: #333;
+            text-decoration: none;
+        }
+
+        .loader {
+            background: rgb(76, 173, 60);
+            background: linear-gradient(180deg, rgba(76, 173, 60, 1) 0%, rgba(253, 253, 253, 1) 100%);
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            margin: auto;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            z-index: 1000;
+            overflow: hidden;
+
+        }
+
+        .loadlogo {
+            padding-top: 10%;
+            position: relative;
+            margin: auto;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            text-align: center;
+            align-items: center;
+            margin-bottom: 0.5vw;
+        }
+
+        .loadh1 {
+            padding-top: 10vw;
+            position: relative;
+            font-size: 3vw;
+            color: darkslategrey;
+            font-family: 'Bad Script', cursive;
+            text-align: center;
+            display: block;
+
+        }
+
+        .hide {
+            opacity: 0;
+            transition: opacity ease;
+        }
+
+        .disp {
+            display: none;
+        }
+
+        @media(max-width:500px){
+    .loadlogo{
+        padding-top: 50%;
+    }
+}
+    </style>
+
+
+
+</head>
+
+<body>
+    <div class="loader">
+        <div class="loadlogo">
+            <img src="./img/logo.png" alt="" width="180" height="200">
+        </div>
+        <h1 class="loadh1 animate__animated animate__fadeInLeft">Unleashing Creativity..</h1>
+
+    </div>
+
+
+    <div class="container-fluid ">
+        <div class=" row one">
+            <div class="col col-sm-1 col-lg-2 poly">
+            </div>
+            <div class="col col-sm-1 col-lg-2 poly">
+            </div>
+            <div class="col col-sm-10 col-lg-8 txt">
+                <h1>STROKES</h1>
+                <h3>The Monochrome Chapter</h3>
+            </div>
+        </div>
+    </div>
+
+    <section class="tw">
+        <div class="portfolio-menu mt-2 mb-4">
+            <ul style="display: none;">
+                <!-- <li class="btn btn-outline-dark active" id="cl"  data-filter="*">All</li> -->
+                <li class="btn btn-outline-dark active" id="bw" data-filter=".b">bnw</li>
+
+            </ul>
+        </div>
+
+        <div class="container two">
+            <div class="portfolio-item row">
+                <div class="item b  col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="img/bnw/1.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="img/bnw/1.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item b col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="img/bnw/2.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="img/bnw/2.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item b col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="img/bnw/3.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="img/bnw/3.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item b col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="img/bnw/4.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="img/bnw/4.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item b col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="img/bnw/5.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="img/bnw/5.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item  col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="img/bnw/6.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="img/bnw/6.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item b col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="img/bnw/7.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="img/bnw/7.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item b col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="img/bnw/8.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="img/bnw/8.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item b col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="img/bnw/9.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="img/bnw/9.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item b col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="img/bnw/10.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="img/bnw/10.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item b col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="img/bnw/11.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="img/bnw/11.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item b col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="img/bnw/12.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="img/bnw/12.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item b col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="img/bnw/13.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="img/bnw/13.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item b col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="img/bnw/14.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="img/bnw/14.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item b col-lg-3 col-md-4 col-6 col-sm">
+                    <a href="img/bnw/15.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+                        <img class="img-fluid" src="img/bnw/15.jpg" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <section id="footer">
+        <div class="row text-center copyrights">
+            <div class="col-lg-12" style="padding: 0;">
+                <div class="social">
+                    <ul>
+                        <li><a href="https://www.facebook.com/Strokes.NITD/"><i
+                                    class="fab fa-facebook-square"></i></i></a>
+                        </li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="https://www.instagram.com/wearestrokes/"><i class="fab fa-instagram"></i></a>
+                        </li>
+                        <li><a href="https://www.youtube.com/channel/UC43_ERuEtBeaZoCCAWiBdaw/featured"><i
+                                    class="fab fa-youtube"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <p style="align-items: center; margin-left:auto;">&copy; 2021 STROKES. All rights reserved.<br>
+                    <a href="index.html" rel="nofollow"><strong>BACK TO HOME</strong></a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css" />
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js"></script>
+
+    <script src="js/app.js"></script>
+    <script src="js/isotope.js"></script>
+
+    <script>
+        if($(window).width>400){
+        $(window).resize(function () { location.reload(); });}
+        window.onload = function () {
+            document.getElementById('bw').click();
+        };
+        function run() {
+            $('.portfolio-item').isotope({
+                itemSelector: '.item',
+                percentPosition: true,
+                layoutMode: "masonry",
+                filter: '.b',
+                percentPosition: true,
+                masonry: {
+                    // columnWidth: '.grid-sizer',
+                    fitWidth: true,
+                }
+            });
+        }
+        $('.portfolio-menu ul li').click(function () {
+            $('.portfolio-menu ul li').removeClass('active');
+            $(this).addClass('active');
+
+            var selector = $(this).attr('data-filter');
+            $('.portfolio-item').isotope({
+                filter: selector
+            });
+            return false;
+        });
+
+        $(document).ready(function () {
+            var popup_btn = $('.popup-btn');
+            popup_btn.magnificPopup({
+                type: 'image',
+                gallery: {
+                    enabled: true
+                }
+            });
+        });
+
+    </script>
+
+
+
+</body>
+
+</html>
